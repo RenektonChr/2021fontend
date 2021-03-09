@@ -46,3 +46,21 @@ function fibonacci_best(n) {
   }
   return fibonacciList[n % 2];
 }
+
+function fibonacci_best2(n) {
+  if(n < 2) { return n }
+
+  let i = 2;
+  let current = 1
+  let pre = 1
+  let result = 0;
+  while(i <= n) {
+    result = current + pre;
+    pre = current;
+    current = result;
+    i++;
+  }
+  return result;
+}
+
+console.log(fibonacci_best2(0),fibonacci_best2(1),fibonacci_best2(2),fibonacci_best2(3),fibonacci_best2(4),fibonacci_best2(5));
