@@ -4,3 +4,5 @@ function test(m) {
 var m = { k: 30 };
 test(m);
 console.log(m.v);
+
+// undefined
