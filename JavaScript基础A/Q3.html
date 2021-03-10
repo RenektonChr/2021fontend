@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+  </ul>
+
+  <script>
+    /**
+     * 用三种方法实现点击li元素，输出标签里的值。
+    */
+
+    var list = document.getElementsByTagName('li');
+    // 方法一 es6 let
+    for(let i = 0; i < list.length; i++) {
+      list[i].onclick = function() {
+        console.log(list[i].innerText);
+      }
+    }
+
+    // 方法二 闭包
+    for(var i = 0; i < list.length; i++) {
+      list[i].onclick = (function(i) {
+        return function() {
+          console.log(list[i].innerText);
+        }
+      })(i)
+    }
+
+    // 方法三 this指向
+    for(var i = 0; i < list.length; i++) {
+      list[i].onclick = function() {
+        console.log(this.innerText);
+      }
+    }
+
+  </script>
+</body>
+
+</html>
