@@ -7,6 +7,14 @@
   <title>Document</title>
 </head>
 <body>
-  <script src="./OneQuestionPerDay/Q5.js"></script>
+  <button id="btn">按钮</button>
+  <script src="./JavaScript基础B/Q6.JS深拷贝.js"></script>
+  <script>
+    const oBtn = document.getElementById('btn');
+    function fun() {
+      console.log(123)
+    }
+    oBtn.onclick = Debouncing(fun, 500);
+  </script>
 </body>
 </html>
